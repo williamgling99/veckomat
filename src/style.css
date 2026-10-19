@@ -5,3 +5,56 @@
 /* Dinner-only planner */
 .dinner-slot{flex:1}.free-text-row{display:flex;gap:6px;margin-top:8px}.free-text-row input{min-width:0;width:100%;border:1px solid var(--line);border-radius:7px;padding:8px;font-size:10px;outline-color:#9db29a}.free-text-row button{border:1px solid var(--line);background:#f3f6f0;color:var(--green);border-radius:7px;display:grid;place-items:center}.drop-hint{margin-top:auto;padding-top:12px;text-align:center;font-size:9px;color:#a1a79d;border-top:1px dashed #e5e7df}.day-card.drag-over{border-color:var(--green);background:#f4f8f2;box-shadow:0 0 0 2px #dce8dc}.draggable-recipe{cursor:grab}.draggable-recipe:active{cursor:grabbing}.free-meal .meal-title small{font-style:italic}.day-card{min-height:220px}
 @media(max-width:620px){.week-grid{grid-template-columns:1fr}.day-card,.day-card:last-child{grid-column:auto;min-height:190px}.day-card:last-child .meal-slots{grid-template-columns:1fr}.drop-hint{display:none}.free-text-row input{font-size:12px;padding:10px}.add-meal{font-size:11px;padding:10px}}
+
+/* Theme controls are shared by the planner, authentication and setup screens. */
+:root{color-scheme:light;--surface:#fff;--surface-soft:#f3f6f0;--focus:#345d45}
+body{background:var(--cream);color:var(--ink)}
+button,input,textarea,select{color:inherit}
+.theme-toggle{display:inline-flex;align-items:center;justify-content:center;gap:7px;min-height:38px;padding:8px 11px;border:1px solid var(--line);border-radius:9px;background:var(--surface);color:var(--ink);font-size:11px;font-weight:700;flex-shrink:0}
+.theme-toggle:hover{background:var(--surface-soft)}
+.theme-toggle svg{flex-shrink:0}
+.setup-theme{position:absolute;top:18px;right:18px}
+.setup-screen{position:relative;padding-top:80px}
+:where(button,input,textarea,select):focus-visible{outline:2px solid var(--focus);outline-offset:3px}
+.search-box:focus-within{outline:2px solid var(--focus);outline-offset:3px}
+input::placeholder,textarea::placeholder{opacity:1}
+:root[data-theme="dark"]{color-scheme:dark;color:#e6ece5;background:#151b18;--cream:#151b18;--surface:#1e2721;--surface-soft:#29372d;--ink:#e6ece5;--muted:#a8b4a7;--line:#3b4b3e;--white:#1e2721;--green:#a0ceaa;--green2:#2e4434;--focus:#b2dfbb}
+.dark .sidebar,.dark .day-card,.dark .panel,.dark .recipe-card,.dark .setup-card,.dark .modal,.dark .quick-recipes>button,.dark .week-nav button,.dark .outline-button,.dark .secondary,.dark .search-box,.dark .segmented button.selected{background:var(--surface);color:var(--ink);border-color:var(--line)}
+.dark .household-chip,.dark .invite-button,.dark .nav-count,.dark .mini-shopping span,.dark .planned-meal,.dark .panel-icon,.dark .new-recipe-card,.dark .free-text-row button,.dark .setup-card code,.dark .segmented{background:var(--surface-soft);border-color:var(--line)}
+.dark .avatar,.dark .new-recipe-card>span{background:#344e3a;color:#b3d9ba}
+.dark nav button,.dark .logout,.dark .day-heading span,.dark .week-nav button,.dark .secondary,.dark .setup-card ol,.dark .setup-card>p:not(.eyebrow),.dark .shopping-tip>p,.dark .mini-shopping span{color:#b5c1b2}
+.dark nav button.active{background:var(--green2);color:var(--green)}
+.dark .eyebrow,.dark .live-label,.dark .recipe-meta,.dark .setup-card .muted,.dark .modal-form label small,.dark .meal-title small,.dark .slot-label,.dark .day-add,.dark footer,.dark .drop-hint{color:var(--muted)}
+.dark .day-heading,.dark .day-add,.dark .shopping-items,.dark .shopping-item,.dark .tip-stat,.dark .drop-hint{border-color:var(--line)}
+.dark .day-card.today{border-color:#82ac89;box-shadow:0 0 0 1px #49694e}
+.dark .day-heading .today-pill{color:#bee4c4;background:var(--green2)}
+.dark .primary,.dark .brand-mark{background:#386b47;border-color:#659a72;color:#fff}
+.dark .primary:hover{background:#447f55}
+.dark .primary:disabled{background:#386b47}
+.dark .outline-button,.dark .invite-button,.dark .free-text-row button{color:var(--green)}
+.dark .icon-button{color:#b0bdab}
+.dark .icon-button:hover{background:#344738;color:var(--ink)}
+.dark .add-meal{color:#b2c0ad;border-color:#61745d}
+.dark .add-meal:hover{background:#2b3e30;border-color:#9bc8a3;color:#c8e8ce}
+.dark .recipe-emoji{background:#3b382c}
+.dark .recipe-art{background:#2c3b2d}
+.dark .recipe-art>small,.dark .recipe-actions button{background:#1b271eed;color:#d1e1cc}
+.dark .setup-card input,.dark .modal-form input,.dark .modal-form textarea,.dark .modal-form select,.dark .add-shopping input,.dark .free-text-row input{background:#17201a;color:var(--ink);border-color:#53664f}
+.dark .search-box input{color:var(--ink)}
+.dark input::placeholder,.dark textarea::placeholder{color:#a1b09b}
+.dark .setup-card label,.dark .modal-form label{color:#c5d3bf}
+.dark .check-circle{background:#17201a;border-color:#81977a}
+.dark .shopping-item.checked .check-circle{background:#386b47;border-color:#86b58d;color:#fff}
+.dark .shopping-item.checked span{color:#a0af9b}
+.dark .empty-state{color:var(--muted)}
+.dark .empty-state h3{color:#c8d9c1}
+.dark .setup-screen{background:radial-gradient(ellipse at 15% 10%,#2b3d2d 0,transparent 45%),var(--cream)}
+.dark .setup-card{box-shadow:0 16px 55px #0004}
+.dark .form-message{color:#ffbba6;background:#4b2c26}
+.dark .modal-backdrop{background:#060c09b8}
+.dark .modal{box-shadow:0 20px 80px #0008}
+.dark .toast{background:#314d39;color:#f1f7ee;border:1px solid #6f9974}
+.dark .live-dot{background:#92c89c;box-shadow:0 0 0 3px #2c4331}
+.dark .meal-color{background:#95c79f}
+.dark .day-card.drag-over{border-color:#b4e3bf;background:#2c4232;box-shadow:0 0 0 2px #82b38d}
+@media(max-width:620px){.theme-toggle{min-width:36px;padding:8px}.topbar .theme-toggle span{display:none}.topbar>div:first-child{min-width:0}.topbar{gap:10px}.top-actions{max-width:46%}}

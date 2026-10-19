@@ -1,1 +1,4 @@
-<!doctype html><html lang="sv"><head><meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><meta name="theme-color" content="#f7f7f2"/><title>Veckomat — vår matplan</title></head><body><div id="root"></div><script type="module" src="/src/main.jsx"></script></body></html>
+<!doctype html><html lang="sv"><head><meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><meta name="theme-color" content="#f7f7f2"/><script>
+// Apply the theme before the page is painted, including when storage is blocked.
+(function(){var saved=null;try{saved=localStorage.getItem('darkMode');}catch(e){}var dark=saved==='true'||(saved!=='false'&&window.matchMedia('(prefers-color-scheme: dark)').matches);var root=document.documentElement;root.dataset.theme=dark?'dark':'light';root.classList.toggle('dark',dark);root.style.colorScheme=dark?'dark':'light';document.querySelector('meta[name="theme-color"]').content=dark?'#151b18':'#f7f7f2';})();
+</script><title>Veckomat — vår matplan</title></head><body><div id="root"></div><script type="module" src="/src/main.jsx"></script></body></html>
