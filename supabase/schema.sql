@@ -33,6 +33,7 @@ create table if not exists public.meal_plans (
   date date not null,
   meal_type text not null check (meal_type in ('breakfast','lunch','dinner')),
   recipe_id uuid references public.recipes(id) on delete set null,
+  custom_text text,
   created_by uuid references auth.users(id) on delete set null,
   created_at timestamptz not null default now(),
   unique(household_id, date, meal_type)
